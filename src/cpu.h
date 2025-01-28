@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+#define sizeof_array(_a) (sizeof(_a) / sizeof(_a[0]))
+
 #define MEMORY_LEN	4096
 #define STACK_LEN	32
 #define TIMER_FREQ	60
@@ -61,6 +63,11 @@ struct cpu {
 
 	int hlt; // Halt flag
 	int dbg; // Debug flag
+	int waitkey; // Key to wait for
 };
+
+int initEmu(struct cpu* cpu);
+void updateTime(struct cpu* cpu, int dt);
+void stepEmu(struct cpu* cpu);
 
 #endif
