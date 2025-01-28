@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include <stdio.h>
 #include <time.h>
 #include "libsdl.h"
@@ -22,6 +23,8 @@ int main(int argc, char** argv) {
 	int raw = 0;
 
 	struct cpu* cpu = malloc(sizeof(*cpu));
+	if (cpu == NULL) ERROR("not enough memory.");
+	memset(cpu, 0x00, sizeof(*cpu));
 
 	for (int i = 1; i < argc; i++) {
 		char* arg = argv[i];
@@ -87,6 +90,7 @@ int main(int argc, char** argv) {
 
 void usage(void) {
 	printf("Usage: %s [-ehr] [-s <speed>] <filename>\n", err_exename);
+	printf("  -d        Use debug mode\n");
 	printf("  -e        Use extended screen mode\n");
 	printf("  -h        Display this help message\n");
 	printf("  -r        Use a raw image\n");

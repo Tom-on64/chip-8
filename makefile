@@ -23,5 +23,5 @@ clean:
 	rm -fr $(BIN) $(OUT)
 
 test: $(OUT)
-	$(OUT) ./pong.ch8
+	$(OUT) -d -s 1 ./test.ch8
 

@@ -1,1 +1,7 @@
 Chip-8 Emulator
+
+Test programs:
+- pong.ch8: https://github.com/kripod/chip8-roms (it's 'Pong (1 player).ch8')
+- ibm.ch8: https://github.com/loktar00/chip8 (it's 'IBM Logo.ch8')
+- test.ch8: https://github.com/corax89/chip8-test-rom
+
