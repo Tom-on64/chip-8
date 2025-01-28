@@ -1,7 +1,7 @@
 CC = cc
 LD = cc
-CCFLAGS = -Wall -Wextra -Wpedantic -Werror -std=c17
-LDFLAGS = 
+CCFLAGS = -Wall -Wextra -Wpedantic -std=c17
+LDFLAGS = -lSDL2 -lm
 
 SRC = ./src
 BIN = ./bin
@@ -23,5 +23,5 @@ clean:
 	rm -fr $(BIN) $(OUT)
 
 test: $(OUT)
-	$(OUT)
+	$(OUT) ./pong.ch8
 
